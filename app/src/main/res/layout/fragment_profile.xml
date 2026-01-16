@@ -1,14 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".views.fragments.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/titleTextViewProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:text="Имя пользователя"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="30sp"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/subTitleTextViewProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTextViewProfile"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:text="afersfsr@dsfsr.ru"
+        android:textSize="18sp" />
+
+    <RelativeLayout
+        android:id="@+id/rlBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subTitleTextViewProfile"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <RelativeLayout
+            android:id="@+id/btnMyOrders"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/icoOrder"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ico_order"/>
+
+            <TextView
+                android:id="@+id/textViewMyOrders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/icoOrder"
+                android:layout_centerVertical="true"
+                android:text="Мои заказы"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginStart="20dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnNotifications"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/btnMyOrders"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/icoNotifications"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ico_settings"/>
+
+            <TextView
+                android:id="@+id/textViewNotifications"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/icoNotifications"
+                android:layout_centerVertical="true"
+                android:text="Уведомления"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginStart="20dp"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchNotify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:thumbTint="@color/white"
+                android:trackTint="@color/switch_track"
+                app:thumbTint="@color/white"
+                app:trackTint="@color/switch_track"
+                android:checked="true"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp">
+        <TextView
+            android:id="@+id/textPolicy1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Политика конфиденциальности"
+            android:layout_centerHorizontal="true"
+            android:textSize="15sp"/>
+        <TextView
+            android:id="@+id/textPolicy2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Пользовательское соглашение"
+            android:layout_centerHorizontal="true"
+            android:textSize="15sp"
+            android:layout_marginTop="24dp"
+            android:layout_below="@id/textPolicy1"/>
+
+        <TextView
+            android:id="@+id/btnExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Выход"
+            android:layout_centerHorizontal="true"
+            android:textSize="15sp"
+            android:textColor="@color/red"
+            android:layout_marginTop="24dp"
+            android:layout_below="@id/textPolicy2"/>
+
+    </RelativeLayout>
+</RelativeLayout>
