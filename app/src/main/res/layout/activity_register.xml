@@ -99,12 +99,13 @@
             android:layout_marginEnd="20dp"
             android:background="@drawable/shape_edit_text"
             android:hint="Дата рождения"
-            android:inputType="date"
+            android:inputType="text"
             android:paddingStart="10dp"
             android:paddingEnd="10dp" />
 
         <Spinner
             android:id="@+id/spinnerGender"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_below="@id/dateBirthET"
@@ -116,6 +117,18 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:spinnerMode="dropdown" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="30dp"
+            android:layout_below="@id/dateBirthET"
+            android:src="@drawable/ico_dropdown"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="40dp"
+            android:clickable="false"
+            android:focusable="false" />
 
         <EditText
             android:id="@+id/emailET"
