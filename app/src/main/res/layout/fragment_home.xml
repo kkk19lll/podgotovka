@@ -1,14 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".views.fragments.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
+        android:id="@+id/searchHome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/shape_edit_text"
+        android:drawableStart="@drawable/ico_search"
+        android:drawablePadding="10dp"
+        android:hint="Искать описания"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/titleActions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchHome"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:text="Акции и новости"
+        android:textColor="@color/text_gray_or_login"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleActions"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_action" />
+
+    <TextView
+        android:id="@+id/titleCatalog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recyclerViewActions"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Каталог описаний"
+        android:textColor="@color/text_gray_or_login"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipAll"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@id/titleCatalog"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Все" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipWoman"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@id/titleCatalog"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/chipAll"
+        android:text="Женщинам" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chipMan"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@id/titleCatalog"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/chipWoman"
+        android:text="Мужчинам" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCatalog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chipMan"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        tools:listitem="@layout/item_catalog" />
+
+</RelativeLayout>

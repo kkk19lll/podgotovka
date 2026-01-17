@@ -10,4 +10,5 @@
     <color name="switch_track">#D1D1D6</color>
     <color name="switch_track_checked">#34C759</color>
     <color name="red">#f00</color>
+    <color name="chip_default">#F5F5F9</color>
 </resources>
